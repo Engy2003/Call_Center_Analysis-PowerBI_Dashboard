@@ -91,9 +91,9 @@ Designed a professional, interactive **Power BI dashboard** with a clean layout,
   - `Call Center 2023 (Access Database)`  
   - `Call Center 2024 (Excel File)`  
 - **📄 Call Center Dashboard.pbix** → Power BI dashboard file.  
-- **📄 Important_Columns.txt** → Key dataset columns used in the project.  
+- **📄 Important_Columns.txt** → Important created columns used in the project.  
 - **📄 Important_Measures.txt** → All created DAX measures.  
-- **📄 Important_Tables.txt** → Main tables and their role in the model.  
+- **📄 Important_Tables.txt** → Important created tables in the model.  
 
 ---
 
