@@ -1,0 +1,7 @@
+Deal Group = 
+    SWITCH(
+        TRUE(),
+        'Dataset'[Deals Closed]=0, "No Deals",
+        'Dataset'[Deals Closed]<=10, "Low Volume Deals",
+        'Dataset'[Deals Closed]>10, "High Volume Deals"
+    )
