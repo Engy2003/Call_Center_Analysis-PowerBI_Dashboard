@@ -1,0 +1,388 @@
+Total Calls = SUM('Dataset'[Total Calls])
+
+_________________________________________________________________________________
+
+Prev Month Calls = 
+    CALCULATE([Total Calls],
+        PREVIOUSMONTH('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Call vs LM = 
+    VAR _ValuesDifference = 
+        [Total Calls] - [Prev Month Calls]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Calls],[Prev Month Calls],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Prev Year Calls = 
+    CALCULATE([Total Calls],
+        PREVIOUSYEAR('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Call vs LY = 
+    VAR _ValuesDifference = 
+        [Total Calls] - [Prev Year Calls]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Calls],[Prev Year Calls],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Prev Qtr Calls = 
+    CALCULATE([Total Calls],
+        PREVIOUSQUARTER('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Call vs LQ = 
+    VAR _ValuesDifference = 
+        [Total Calls] - [Prev Qtr Calls]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Calls],[Prev Qtr Calls],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Total Call Reached = 
+    SUM('Dataset'[Calls Reached])
+
+_________________________________________________________________________________
+
+Prev Month Calls Reached = 
+    CALCULATE([Total Call Reached],
+        PREVIOUSMONTH('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Year Calls Reached = 
+    CALCULATE([Total Call Reached],
+        PREVIOUSYEAR('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Qtr Calls Reached = 
+    CALCULATE([Total Call Reached],
+        PREVIOUSQUARTER('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Call Reached vs LM = 
+    VAR _ValuesDifference = 
+        [Total Call Reached] - [Prev Month Calls Reached]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Call Reached],[Prev Month Calls Reached],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Call Reached vs LY = 
+    VAR _ValuesDifference = 
+        [Total Call Reached] - [Prev Year Calls Reached]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Call Reached],[Prev Year Calls Reached],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Call Reached vs LQ = 
+    VAR _ValuesDifference = 
+        [Total Call Reached] - [Prev Qtr Calls Reached]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Call Reached],[Prev Qtr Calls Reached],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Total Deals Closed = SUM('Dataset'[Deals Closed])
+
+_________________________________________________________________________________
+
+Prev Month Deals Closed = 
+    CALCULATE([Total Deals Closed],
+        PREVIOUSMONTH('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Year Deals Closed = 
+    CALCULATE([Total Deals Closed],
+        PREVIOUSYEAR('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Qtr Deals Closed = 
+    CALCULATE([Total Deals Closed],
+        PREVIOUSQUARTER('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Deal Closed vs LM = 
+    VAR _ValuesDifference = 
+        [Total Deals Closed] - [Prev Month Deals Closed]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Closed],[Prev Month Deals Closed],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Deal Closed vs LY = 
+    VAR _ValuesDifference = 
+        [Total Deals Closed] - [Prev Year Deals Closed]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Closed],[Prev Year Deals Closed],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Deal Closed vs LQ = 
+    VAR _ValuesDifference = 
+        [Total Deals Closed] - [Prev Qtr Deals Closed]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Closed],[Prev Qtr Deals Closed],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Total Deals Values = SUM('Dataset'[Deal Value ($)])
+
+_________________________________________________________________________________
+
+Prev Month Deals Values = 
+    CALCULATE([Total Deals Values],
+        PREVIOUSMONTH('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Year Deals Values = 
+    CALCULATE([Total Deals Values],
+        PREVIOUSYEAR('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Prev Qtr Deals Values = 
+    CALCULATE([Total Deals Values],
+        PREVIOUSQUARTER('Calendar'[Date])
+    )
+
+_________________________________________________________________________________
+
+Deal Values vs LM = 
+    VAR _ValuesDifference = 
+        [Total Deals Values] - [Prev Month Deals Values]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Values],[Prev Month Deals Values],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Deal Values vs LY = 
+    VAR _ValuesDifference = 
+        [Total Deals Values] - [Prev Year Deals Values]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Values],[Prev Year Deals Values],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Deal Values vs LQ = 
+    VAR _ValuesDifference = 
+        [Total Deals Values] - [Prev Qtr Deals Values]
+    VAR _PercentageDifference = 
+        DIVIDE([Total Deals Values],[Prev Qtr Deals Values],1)-1
+    VAR _Symbole = 
+        IF(_ValuesDifference>0, "+", " ")
+    VAR _Result = 
+        _Symbole & FORMAT(_PercentageDifference, "0.00")
+        & " | " & _Symbole & FORMAT(_ValuesDifference, "#,#")
+    RETURN _Result
+
+_________________________________________________________________________________
+
+Calls Compare = 
+    VAR _Select = 
+    SELECTEDVALUE('Switch for KPI'[Compare])
+    RETURN
+    SWITCH(
+        TRUE(),
+        _Select = "Vs LY", [Call vs LY],
+        _Select = "Vs LM", [Call vs LM],
+        _Select = "Vs LQ", [Call vs LQ],
+        ""
+    )
+
+_________________________________________________________________________________
+
+CF Total Calls = 
+    VAR _Check = SELECTEDVALUE('Switch for KPI'[Compare])
+    VAR _Switch = 
+        SWITCH(
+            TRUE(),
+            _Check = "Vs LY", 
+            [Total Calls]-[Prev Year Calls],
+            _Check = "Vs LM",
+            [Total Calls]-[Prev Month Calls],
+            [Total Calls]-[Prev Qtr Calls]
+        )
+        RETURN IF(_Switch>0, "#1D8FBD", "Red")
+
+_________________________________________________________________________________
+
+Calls Reached Compare = 
+    VAR _Select = 
+    SELECTEDVALUE('Switch for KPI'[Compare])
+    RETURN
+    SWITCH(
+        TRUE(),
+        _Select = "Vs LY", [Call Reached vs LY],
+        _Select = "Vs LM", [Call Reached vs LM],
+        _Select = "Vs LQ", [Call Reached vs LQ],
+        ""
+    )
+
+_________________________________________________________________________________
+
+Deals closed Compare = 
+    VAR _Select = 
+    SELECTEDVALUE('Switch for KPI'[Compare])
+    RETURN
+    SWITCH(
+        TRUE(),
+        _Select = "Vs LY", [Deal Closed vs LY],
+        _Select = "Vs LM", [Deal Closed vs LM],
+        _Select = "Vs LQ", [Deal Closed vs LQ],
+        ""
+    )
+
+_________________________________________________________________________________
+
+Deals Values Compare = 
+    VAR _Select = 
+    SELECTEDVALUE('Switch for KPI'[Compare])
+    RETURN
+    SWITCH(
+        TRUE(),
+        _Select = "Vs LY", [Deal Values vs LY],
+        _Select = "Vs LM", [Deal Values vs LM],
+        _Select = "Vs LQ", [Deal Values vs LQ],
+        ""
+    )
+
+_________________________________________________________________________________
+
+CF Total Calls Reached = 
+    VAR _Check = SELECTEDVALUE('Switch for KPI'[Compare])
+    VAR _Switch = 
+        SWITCH(
+            TRUE(),
+            _Check = "Vs LY", 
+            [Total Call Reached]-[Prev Year Calls Reached],
+            _Check = "Vs LM",
+            [Total Call Reached]-[Prev Month Calls Reached],
+            [Total Call Reached]-[Prev Qtr Calls Reached]
+        )
+        RETURN IF(_Switch>0, "#1D8FBD", "Red")
+
+_________________________________________________________________________________
+
+CF Total Deals Closed = 
+    VAR _Check = SELECTEDVALUE('Switch for KPI'[Compare])
+    VAR _Switch = 
+        SWITCH(
+            TRUE(),
+            _Check = "Vs LY", 
+            [Total Deals Closed]-[Prev Year Deals Closed],
+            _Check = "Vs LM",
+            [Total Deals Closed]-[Prev Month Deals Closed],
+            [Total Deals Closed]-[Prev Qtr Deals Closed]
+        )
+        RETURN IF(_Switch>0, "#1D8FBD", "Red")
+
+_________________________________________________________________________________
+
+CF Total Deals Values = 
+    VAR _Check = SELECTEDVALUE('Switch for KPI'[Compare])
+    VAR _Switch = 
+        SWITCH(
+            TRUE(),
+            _Check = "Vs LY", 
+            [Total Deals Values]-[Prev Year Deals Values],
+            _Check = "Vs LM",
+            [Total Deals Values]-[Prev Month Deals Values],
+            [Total Deals Values]-[Prev Qtr Deals Values]
+        )
+        RETURN IF(_Switch>0, "#1D8FBD", "Red")
+
+_________________________________________________________________________________
+
+Dropped Calls = [Total Calls]-[Total Call Reached]
+
+_________________________________________________________________________________
