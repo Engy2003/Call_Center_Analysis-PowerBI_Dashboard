@@ -1,0 +1,13 @@
+Calendar = 
+    ADDCOLUMNS(
+        CALENDARAUTO(),
+        "Year", YEAR([Date]),
+        "Month", FORMAT([Date],"mmm"),
+        "Month Number", MONTH([Date]),
+        "Weekday", FORMAT([Date],"ddd"),
+        "Weekday Number", WEEKDAY([Date]),
+        "Weekday Type", IF(WEEKDAY([Date])=1, "Weekend", IF(WEEKDAY([Date])=7, "Weekend", "Weekday")),
+        "Qtr", "Qtr " & QUARTER([Date])
+    )
+
+_________________________________________________________________________________
